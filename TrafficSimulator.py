@@ -22,12 +22,12 @@ RED_TIME_NS = 7 * 1000
 YELLOW_TIME_SN = 3 * 1000
 
 CAR_WIDTH, CAR_HEIGHT = 30, 20
-CAR_SPEED = 5
+CAR_SPEED = 2
 DIRECTION = ''
 
 PEDESTRIAN_COLOR = (128, 0, 128)  # Purple color for pedestrians
 PEDESTRIAN_WIDTH, PEDESTRIAN_HEIGHT = 10, 20
-PEDESTRIAN_SPEED = 2
+PEDESTRIAN_SPEED = 1
 PEDESTRIAN_DIRECTION = ''
 
 class Car:
@@ -197,6 +197,6 @@ while True:
     for pedestrian in pedestrians:
         pedestrian.move()
         pedestrian.draw()
-        
     
+
     pygame.display.flip()
