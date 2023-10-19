@@ -10,6 +10,7 @@ pygame.display.set_caption("Four-Way Intersection with Traffic Lights and Cars")
 
 WHITE = (255, 255, 255)
 GRAY = (169, 169, 169)
+LIGHT_GREY = (220, 220, 220)
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
@@ -71,6 +72,18 @@ while True:
         pygame.draw.circle(screen, GREEN, (WIDTH // 2, 3 * HEIGHT // 4), 20)
         pygame.draw.circle(screen, RED, (WIDTH // 4, HEIGHT // 2), 20)
         pygame.draw.circle(screen, RED, (3 * WIDTH // 4, HEIGHT // 2), 20)
+
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 50, HEIGHT // 2 + 80), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 50, HEIGHT // 2 + 80), 10)
+
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 75, HEIGHT // 2 + 60), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 75, HEIGHT // 2 + 60), 10)
+
+
         CAR_WIDTH, CAR_HEIGHT = 20, 30
         if random.randint(1, 100) < 2:
             cars.append(Car(WIDTH // 2.22,  -CAR_HEIGHT, CAR_COLOR, CAR_SPEED, 'Vertical'))
@@ -82,11 +95,32 @@ while True:
         pygame.draw.circle(screen, YELLOW, (WIDTH // 2, 3 * HEIGHT // 4), 20)
         pygame.draw.circle(screen, RED, (WIDTH // 4, HEIGHT // 2), 20)
         pygame.draw.circle(screen, RED, (3 * WIDTH // 4, HEIGHT // 2), 20) 
+
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 50, HEIGHT // 2 + 80), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 50, HEIGHT // 2 + 80), 10)
+
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 75, HEIGHT // 2 + 60), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 75, HEIGHT // 2 + 60), 10)
+
     elif state_time < GREEN_TIME_NS + YELLOW_TIME_NS + RED_TIME_NS:  
         pygame.draw.circle(screen, RED, (WIDTH // 2, HEIGHT // 4), 20)  
         pygame.draw.circle(screen, RED, (WIDTH // 2, 3 * HEIGHT // 4), 20) 
         pygame.draw.circle(screen, GREEN, (WIDTH // 4, HEIGHT // 2), 20)
         pygame.draw.circle(screen, GREEN, (3 * WIDTH // 4, HEIGHT // 2), 20)
+
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 50, HEIGHT // 2 + 80), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 50, HEIGHT // 2 + 80), 10)
+
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 75, HEIGHT // 2 + 60), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 75, HEIGHT // 2 + 60), 10)
 
         CAR_WIDTH, CAR_HEIGHT = 30, 20
         if random.randint(1, 100) < 2:
@@ -99,6 +133,17 @@ while True:
         pygame.draw.circle(screen, RED, (WIDTH // 2, 3 * HEIGHT // 4), 20)  
         pygame.draw.circle(screen, YELLOW, (WIDTH // 4, HEIGHT // 2), 20) 
         pygame.draw.circle(screen, YELLOW, (3 * WIDTH // 4, HEIGHT // 2), 20) 
+
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 50, HEIGHT // 2 - 85), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 - 50, HEIGHT // 2 + 80), 10)
+        pygame.draw.circle(screen, LIGHT_GREY, (WIDTH // 2 + 50, HEIGHT // 2 + 80), 10)
+
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 - 75, HEIGHT // 2 + 60), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 75, HEIGHT // 2 - 60), 10)
+        pygame.draw.circle(screen, RED, (WIDTH // 2 + 75, HEIGHT // 2 + 60), 10)
+
     
     for car in cars:
         car.move()
