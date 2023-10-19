@@ -53,9 +53,15 @@ while True:
     pygame.draw.rect(screen, GRAY, (0, HEIGHT // 2 - 50, WIDTH, 100))
     pygame.draw.line(screen, WHITE, (0, HEIGHT // 2), (WIDTH, HEIGHT // 2), 5)
     
-    # Draw vertical road
     pygame.draw.rect(screen, GRAY, (WIDTH // 2 - 50, 0, 100, HEIGHT))
     pygame.draw.line(screen, WHITE, (WIDTH // 2, 0), (WIDTH // 2, HEIGHT), 5)
+
+    pygame.draw.rect(screen, WHITE, (WIDTH // 2 - 75, HEIGHT // 2 - 45, 20, 90))  # Vertical crosswalk
+    pygame.draw.rect(screen, WHITE, (WIDTH // 2 + 55, HEIGHT // 2 - 45, 20, 90))  # Vertical crosswalk
+
+    pygame.draw.rect(screen, WHITE, (WIDTH // 2 - 37 , HEIGHT // 2 - 80, 75, 20))  # Horizontal crosswalk
+    pygame.draw.rect(screen, WHITE, (WIDTH // 2 - 37, HEIGHT // 2 + 55, 75, 20))  # Horizontal crosswalk
+
     
     current_time = pygame.time.get_ticks()
     state_time = current_time % (GREEN_TIME_NS + YELLOW_TIME_NS + RED_TIME_NS + YELLOW_TIME_SN)
@@ -94,7 +100,6 @@ while True:
         pygame.draw.circle(screen, YELLOW, (WIDTH // 4, HEIGHT // 2), 20) 
         pygame.draw.circle(screen, YELLOW, (3 * WIDTH // 4, HEIGHT // 2), 20) 
     
-    # Move and draw cars
     for car in cars:
         car.move()
         car.draw()
